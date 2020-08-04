@@ -1,10 +1,10 @@
 @charset "utf-8";
 
-/* Å‰‚Ìİ’è */
+/* General */
 html {
     font-size: 62.5%;
     line-height: 2;
-    font-family: "Dosis", sans-serif, 'ƒqƒ‰ƒMƒmŠpƒS Pro W3', 'Hiragino Kaku Gothic Pro', "ŸàƒSƒVƒbƒN Medium", "Yu Gothic Medium", "ŸàƒSƒVƒbƒN‘Ì", YuGothic, 'ƒƒCƒŠƒI', Meiryo, Osaka, '‚l‚r ‚oƒSƒVƒbƒN', 'MS PGothic', sans-serif;
+    font-family: "Dosis", sans-serif, 'ï¿½qï¿½ï¿½ï¿½Mï¿½mï¿½pï¿½S Pro W3', 'Hiragino Kaku Gothic Pro', "ï¿½ï¿½Sï¿½Vï¿½bï¿½N Medium", "Yu Gothic Medium", "ï¿½ï¿½Sï¿½Vï¿½bï¿½Nï¿½ï¿½", YuGothic, 'ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½I', Meiryo, Osaka, 'ï¿½lï¿½r ï¿½oï¿½Sï¿½Vï¿½bï¿½N', 'MS PGothic', sans-serif;
     text-align: center;
 }
 
@@ -20,7 +20,7 @@ body, figure {
     background-color: #dddddd
 }
 
-/* ƒwƒbƒ_[‚Ìî•ñ */
+/* Header */
 header {
     position: relative;
     height: 60vh;
@@ -28,7 +28,7 @@ header {
     right: 0;
     bottom: 0;
     left: 0;
-    background: url(1.png);
+    background: url(img/1.png);
 }
 
 header h1 {
@@ -61,7 +61,7 @@ header h3 {
     transform: translateY(-50%);
 }
 
-/* ƒOƒ[ƒoƒ‹ƒiƒr */
+/* Global Navigation */
 .gnavi {
     height: 80px;
     background-color: #000000;
@@ -142,7 +142,7 @@ a {
     text-decoration: none;
 }
 
-/* ƒy[ƒWƒRƒ“ƒeƒ“ƒc‚ÌƒXƒ^ƒCƒ‹w’è */
+/* Main */
 main {
     padding: 4em 16px;
     font-size: 1.6rem;
@@ -255,7 +255,7 @@ main h1 {
     padding-top: 15px;
 }
 
-/* •\‚Ìİ’è */
+/* Tables */
 table {
     border-collapse: collapse;
 }
