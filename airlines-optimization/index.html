@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Airlines Heuristic Visualizer</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body class="theme-dark">
+  <header class="topbar">
+    <div class="title">Airlines Visualizer</div>
+    <div class="spacer"></div>
+    <label class="theme">
+      <span>Theme</span>
+      <select id="themeSelect">
+        <option value="dark" selected>Dark</option>
+        <option value="light">Light</option>
+      </select>
+    </label>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <div class="row">
+        <label>Seed:
+          <input id="seedInput" type="number" value="0" />
+        </label>
+        <label>#Cases:
+          <input id="casesInput" type="number" min="1" max="500" value="1" />
+        </label>
+        <button id="downloadBtn" class="btn">Download</button>
+        <div class="hint">※ Download は seed+i (i=0..#Cases-1) の入力を 0000.txt, 0001.txt, ... として ZIP にまとめて保存します（#Cases ≤ 500）。</div>
+      </div>
+
+      <div class="io">
+        <div class="io-col">
+          <div class="label">Input:</div>
+          <textarea id="inputArea" spellcheck="false" placeholder="ここに入力を貼り付けるか、Download で生成してください"></textarea>
+        </div>
+        <div class="io-col">
+          <div class="label">Output:</div>
+          <textarea id="outputArea" spellcheck="false" placeholder="ここに出力を貼り付けて Visualize!"></textarea>
+        </div>
+      </div>
+
+      <div class="row">
+        <button id="vizBtn" class="btn primary">Visualize!</button>
+        <button id="pngBtn" class="btn">Save as PNG</button>
+        <div id="status" class="status"></div>
+      </div>
+    </section>
+
+    <section class="results">
+      <div class="scoreline">
+        <div id="scoreText" class="score">Score = —</div>
+        <div id="errorText" class="error"></div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <div class="card-h">
+            <span class="badge">1</span>
+            <span class="card-title">Your Flight Schedule</span>
+          </div>
+          <canvas id="scheduleCanvas" width="860" height="560"></canvas>
+          <div class="note">横軸: 時刻 (06:00–21:00), 縦軸: 機体(1–K)</div>
+        </div>
+
+        <div class="side">
+          <div class="card">
+            <div class="card-h">
+              <span class="badge">2</span>
+              <span class="card-title">Share Graph</span>
+            </div>
+            <div id="shareGraph" class="sharegraph">
+              <div class="share-row">
+                <div class="share-name">Square</div>
+                <div class="share-barwrap"><div id="barSq" class="share-bar sq"></div></div>
+                <div id="valSq" class="share-val">—</div>
+              </div>
+              <div class="share-row">
+                <div class="share-name">Circle</div>
+                <div class="share-barwrap"><div id="barCi" class="share-bar ci"></div></div>
+                <div id="valCi" class="share-val">—</div>
+              </div>
+              <div class="share-foot">Share (x1e10)</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-h">
+              <span class="badge">3</span>
+              <span class="card-title">Random Moves</span>
+            </div>
+            <div class="tables">
+              <table class="tbl">
+                <thead>
+                  <tr><th>City</th><th>Time</th><th class="sq">Square</th><th class="ci">Circle</th></tr>
+                </thead>
+                <tbody id="rmLeft"></tbody>
+              </table>
+              <table class="tbl">
+                <thead>
+                  <tr><th>City</th><th>Time</th><th class="sq">Square</th><th class="ci">Circle</th></tr>
+                </thead>
+                <tbody id="rmRight"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Local visualizer (static HTML/JS)</span>
+  </footer>
+
+  <script src="./main.js"></script>
+</body>
+</html>
